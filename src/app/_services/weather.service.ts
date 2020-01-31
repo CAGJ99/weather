@@ -13,6 +13,8 @@ export class WeatherService {
 
 // Obtener el clima desde la API de Open Weather
 getWeatherXCity(city: string): Observable<any> {
-    return this.http.get<any>(`${config.apiUrl}${city}`);
+    const apiKey = '0e4e4d55dd58fa7bb8e3871c6d319361';
+    const countryCode = 'CL';
+    return this.http.get<any>(`${config.apiUrl}${city},${countryCode}&appid=${apiKey}&units=metric`);
 }
 }

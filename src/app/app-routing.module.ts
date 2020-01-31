@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { WeatherListComponent } from './_components/weather-list/weather-list.component';
 
 
-const routes: Routes = [];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+
+
+const APP_ROUTES: Routes = [
+{path: '', component: WeatherListComponent},
+];
+
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
