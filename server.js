@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(__dirname + '/dist/WeatherInfo'));
 
 app.get('/*', function(req, res) {
-
+    // nombre de la carpeta
     res.sendFile(path.join(__dirname + '/dist/WeatherInfo/index.html'));
 });
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { config } from '../../config';
+
 
 
 import {Observable} from 'rxjs';
@@ -8,8 +9,14 @@ import {Observable} from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
+  
 export class WeatherService {
     constructor(private http: HttpClient ) {}
+// insertar cabeceragi
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+        })};
 
 // Obtener el clima desde la API de Open Weather
 getWeatherXCity(city: string): Observable<any> {
