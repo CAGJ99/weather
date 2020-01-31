@@ -6,7 +6,8 @@ import { WeatherListComponent } from './_components/weather-list/weather-list.co
 
 
 const APP_ROUTES: Routes = [
-{path: '', component: WeatherListComponent},
+{path: '/', component: WeatherListComponent},
+{path: '**', redirectTo:''}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
